@@ -27,6 +27,9 @@ jobs:
         env:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
 
+      - name: Helm Deps
+        run: |
+          helm repo add bitnami https://charts.bitnami.com/bitnami
       - name: Release packages main
         uses: helm/chart-releaser-action@v1.6.0
         env:
